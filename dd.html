@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TRY THIS RANDOMIZED RCP GAME BY AFNAN </title>
+    <style>
+        body {
+            font-family: Arial, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #result {
+            font-size: 22px;
+            margin: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rock Paper Scissors</h1>
+    <p>Choose your move:</p>
+    <button onclick="playGame('rock')">✊ Rock</button>
+    <button onclick="playGame('paper')">✋ Paper</button>
+    <button onclick="playGame('scissors')">✌️ Scissors</button>
+    <div id="result"></div>
+    <div id="score"></div>
+
+    <script>
+        let playerScore = 0;
+        let computerScore = 0;
+
+        function playGame(playerChoice) {
+            const choices = ['rock', 'paper', 'scissors'];
+            const computerChoice = choices[Math.floor(Math.random() * 7)];
+            
+            let result;
+
+            if (playerChoice === computerChoice) {
+                result = "It's a tie!";
+            } else if (
+                (playerChoice === 'rock' && computerChoice === 'scissors') ||
+                (playerChoice === 'paper' && computerChoice === 'rock') ||
+                (playerChoice === 'scissors' && computerChoice === 'paper')
+            ) {
+                result = "You win! 🎉";
+                playerScore++;
+            } else {
+                result = "Computer wins! 😢";
+                computerScore++;
+            }
+
+            document.getElementById('result').innerHTML = `
+                You chose: ${playerChoice}<br>
+                Computer chose: ${computerChoice}<br>
+                <strong>${result}</strong>
+            `;
+
+            document.getElementById('score').innerHTML = `
+                Score: You ${playerScore} - ${computerScore} Computer
+            `;
+        }
+    </script>
+</body>
+</html>
