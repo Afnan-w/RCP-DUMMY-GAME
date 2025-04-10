@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>TRY THIS RANDOMIZED RCP GAME BY AFNAN </title>
+    <H1>ROCK PAPER SCISSORS</H1>
     <style>
         body {
             font-family: Arial, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -22,11 +23,11 @@
     </style>
 </head>
 <body>
-    <h1>Rock Paper Scissors</h1>
+    <h1><i>ROCK PAPER SCISSORS</i></h1>
     <p>Choose your move:</p>
-    <button onclick="playGame('rock')">✊ Rock</button>
-    <button onclick="playGame('paper')">✋ Paper</button>
-    <button onclick="playGame('scissors')">✌️ Scissors</button>
+    <button onclick="playGame('rock')">✊ <b>Rock</b></button>
+    <button onclick="playGame('paper')">✋ <b>Paper</b></button>
+    <button onclick="playGame('scissors')">✌️ <b>Scissors</b></button>
     <div id="result"></div>
     <div id="score"></div>
 
@@ -36,7 +37,7 @@
 
         function playGame(playerChoice) {
             const choices = ['rock', 'paper', 'scissors'];
-            const computerChoice = choices[Math.floor(Math.random() * 7)];
+            const computerChoice = choices[Math.floor(Math.random() * 3)];
             
             let result;
 
@@ -66,4 +67,7 @@
         }
     </script>
 </body>
+<footer>
+    <h3>&copy; This game is made by afnan only using html and js!</h3>
+  </footer>
 </html>
